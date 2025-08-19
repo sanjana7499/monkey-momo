@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Gallery</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #f8f9fa, #e9ecef);
+      color: #333;
+    }
+
+    .page-header {
+    background-color: #f0f4ff; /* soft blue patch */
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+  }
+
+    .header-box {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background: linear-gradient(to right, #fff, #333); /* gradient patch */
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo-title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #000; /* use to make border around logo */
+      background-color: #fff;
+      padding: 5px;
+    }
+
+    .logo-title h1 {
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: #fff;
+      margin: 0;
+    }
+
+    .button-wrapper {
+      margin-top: 20px;
+    }
+
+    .back-to-home {
+      font-size: 1rem;
+      color: #fff;
+      background-color: #000;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      display: inline-block;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .back-to-home:hover {
+      background-color: #333;
+      transform: scale(1.05);
+    }
+
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .gallery a {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+      display: block;
+      height: 180px;
+    }
+
+    .gallery a:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .gallery a::after {
+      content: attr(data-caption);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 8px;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      font-size: 14px;
+      opacity: 0;
+      transform: translateY(100%);
+      transition: 0.3s ease;
+    }
+
+    .gallery a:hover::after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      }
+
+      .gallery a {
+        height: 140px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="page-hader">
+    <div class="header-box">
+        <div class="logo-title">
+            <img src="assets/logo-dark.png" alt="Logo" class="logo" />
+            <h1>Image Gallery</h1>
+        </div>
+        <div class="button-wrapper">
+        <a href="index.html" class="back-to-home">← Back to Home</a>
+    </div>
+    </div>
+  </header>
+
+  <section class="gallery">
+    <a data-fancybox="gallery" href="assets/image-1.jpg" data-caption="Project 1">
+      <img src="assets/image-1.jpg" alt="Project 1" />
+    </a>
+    <a data-fancybox="gallery" href="assets/image-2.jpg" data-caption="Project 2">
+      <img src="assets/image-2.jpg" alt="Project 2" />
+    </a>
+    <a data-fancybox="gallery" href="assets/image-3.jpg" data-caption="Project 3">
+      <img src="assets/image-3.jpg" alt="Project 3" />
+    </a>
+    <a data-fancybox="gallery" href="assets/image-4.jpg" data-caption="Project 4">
+      <img src="assets/image-4.jpg" alt="Project 4" />
+    </a>
+    <a data-fancybox="gallery" href="assets/image-5.jpg" data-caption="Project 5">
+      <img src="assets/image-5.jpg" alt="Project 5" />
+    </a>
+    <a data-fancybox="gallery" href="assets/image-6.jpg" data-caption="Project 6">
+      <img src="assets/image-6.jpg" alt="Project 6" />
+    </a>
+    <a data-fancybox="gallery" href="assets/image-7.jpg" data-caption="Project 7">
+      <img src="assets/image-7.jpg" alt="Project 7" />
+    </a>
+    <a data-fancybox="gallery" href="assets/image-8.jpg" data-caption="Project 8">
+      <img src="assets/image-8.jpg" alt="Project 8" />
+    </a>
+    <!-- Add more images here -->
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+</body>
+</html>
